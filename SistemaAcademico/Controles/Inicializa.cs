@@ -30,7 +30,7 @@ namespace SistemaAcademico.Controles
                     "\t\t\t2 - Exibir todos alunos\n" +
                     "\t\t\t3 - Apaga aluno\n" +
                     "\t\t\t4 - Exibir aluno\n" +
-                    "\t\t\t5 - Cadastra nota de aluno\\n\"" +
+                    "\t\t\t5 - Cadastra nota de aluno\n\"" +
                     "\t\t\t0 - Sair\n");
                 op = Convert.ToInt16(Console.ReadLine());
 
@@ -57,9 +57,28 @@ namespace SistemaAcademico.Controles
                     break;
                 case 3:
                     ///Implementar função para apagar uma aluno passando o numero de matricula
+                    ///
+
+                    Console.Write("Digite a Matricula que deseja deletar: ");
+                    int matriculaDel = Convert.ToInt32(Console.ReadLine());
+
+                    ControleAluno.DeletarAluno(Alunos, matriculaDel);
+
+                    Console.WriteLine("Pressione qualquer tecla para continuar...");
+                    Console.ReadLine();
                     break;
                 case 4:
                     ///Implementar função para exibir um aluno passando o numero de matricula
+                    ///
+
+                    Console.Write("Qual aluno deseja exibir? Digite a matricula:");
+
+                    int matriculaExibir = Convert.ToInt32(Console.ReadLine());
+
+                    ControleAluno.ExibirAluno(Alunos, matriculaExibir);
+
+                    Console.WriteLine("Pressione qualquer tecla para continuar...");
+                    Console.ReadLine();
                     break;
             }
         }

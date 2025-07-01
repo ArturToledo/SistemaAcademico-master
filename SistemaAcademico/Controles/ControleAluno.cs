@@ -42,6 +42,27 @@ namespace SistemaAcademico.Controles
                 $"\t\t----------------------------");
         }
 
+        public void DeletarAluno(Dictionary<int, Aluno> alunos, int matricula)
+        {
+            if (alunos.ContainsKey(matricula))
+            {
+                alunos.Remove(matricula);
+                Console.WriteLine("Aluno removido com sucesso!");
+            }
+        }
+
+        public void ExibirAluno(Dictionary<int, Aluno> alunos, int matricula)
+        {
+            if (alunos.TryGetValue(matricula, out Aluno aluno))
+            {
+                ImprimeDados(aluno);
+            }
+            else
+            {
+                Console.WriteLine("Aluno não encontrado!");
+            }
+        }
+
         public void LancarNotas(double pNota, Aluno aluno)
         {
             aluno.Notas.Add(pNota);
